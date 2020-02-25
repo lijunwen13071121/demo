@@ -1,0 +1,26 @@
+<template>
+<div>
+     <i class="el-icon-refresh mian" 
+     :style="{ transform: `rotate(${rotate}deg)` }"
+     @click="refresh"></i>
+</div>
+</template>
+<script>
+export default {
+    data(){
+        return {
+            rotate: 0
+        }
+    },
+    methods:{
+        refresh(){
+            this.rotate = this.rotate+180
+        }
+    }
+}
+</script>
+<style scoped>
+.mian{
+    transition: all 1s;/* all所用动态 1s一秒完成*/
+}
+</style>
