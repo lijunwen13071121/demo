@@ -1,0 +1,84 @@
+
+开发前后：
+1：开发前，确认主分支的内容是最新的。
+	git checkout master 
+	git pull
+2: 基于主分支，创建自己的个人分支，避免污染主分支
+	git checkout -b featureName
+
+3: 提交
+	git status 检测所改动文件是不是自己想要的。
+	git add *  *号表示所有，根据路径提交。
+	git commit -m "提交信息" 
+	git pull 
+	git push origin featureName;		// 
+	git pull 
+	git add fileName
+	git commit 
+		
+4: 切回主分支。git checkout master
+
+5、分支合并，dev开发分支，master主分支
+	git checkout master // 切换到主分支
+	git pull //获取主分支最新代码
+	git merge dev  // 把本地库的开发分支合并到本地库主分支
+	git push  // 必须提交，之前还只是改了本地主分支库，这一步改了服务器主分支库。
+
+git 常用命令
+	git pull
+	git push 
+	git checkout -b featureName 新建分支并进入
+	git branch 查看分支
+	git status 查看状
+	git log 查看提交记录
+	git reset --hard xxx 版本回退
+	git merge origin/featureName 合并远程分支。
+	git fetch origin vesion_1.5:dev_yl //从远程仓库vesion_1.5获取最新，在本地建立分支dev_yl
+	git checkout -b featureName origin/vesion_1.5 拉取远程分支，并以此为基础新建本地分支。
+	git branch -D featureName 删除本地分支
+	git checkout public 恢复改动，比如说我改了些东西，不想保留这些改动。
+	rm -rf public 删除文件 比如在某个分去建立了文件，提交时不提交，需要删除。
+
+6、关联本地已有仓库
+	git remote add origin https://github.com/xiaodu1993/mybatis-test.git
+	git push -u origin master
+7、本地初始化
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/xiaodu1993/mybatis-test.git
+	git push -u origin master
+
+
+命名规范 
+
+ 原则： 不应有中文。
+
+ -类型      
+	新功能: feature, 
+    	更新代码: update，
+	修改注释,文案修改: doc， 
+	样式修改：style
+	代码格式调整: code 
+	bug修改 : fix
+
+ -功能模块
+	根据功能模块名称定义。
+
+ -个人名称
+	个人名称，可以是全写，可以是首字母。
+
+例如：
+	feature/user-xjp user 模块的新功能， 也可以理解成，开发新功能模块user
+	update/user-xjp  user 模块更新，比如说，自测的时候，发现的一些问题。
+
+	doc/user-xjp 
+	
+	style/user-xjp
+
+-----git 常用功能
+add 了错误的文件如何撤回
+git reset HEAD -- 文件名 //撤回指定文件
+git reset HEAD 撤回上一次所有add
+
+	
